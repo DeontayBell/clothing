@@ -15,5 +15,5 @@ class Shoes(models.Model):
     picture_url = models.URLField(null=True)
     bin = models.ForeignKey(BinVO, related_name="shoes", on_delete=models.CASCADE)
 
-    # def get_api_url(self):
-    #     return reverse("")
+    def get_api_url(self):
+        return reverse("api_show_attendee", kwargs={"pk": self.pk})
