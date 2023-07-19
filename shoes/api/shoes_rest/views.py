@@ -64,3 +64,14 @@ def api_show_shoe(request, pk):
             encoder=ShoesEncoder,
             safe=False,
         )
+    else:
+        try:
+            shoe = Shoes.objects.get(id=pk)
+            shoe.delete()
+            return JsonResponse(
+                shoe,
+                encoder=ShoesEncoder,
+                safe=False,
+            )
+        except Shoes.DoesNotExist:
+            return JsonResponse({"message": "Shoe doesn't exist"})
