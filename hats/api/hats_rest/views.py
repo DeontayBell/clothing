@@ -26,7 +26,7 @@ def api_hat(request):
     if request.method == "GET":
         hat = Hat.objects.all()
         return JsonResponse(
-            {"Hats": hat},
+            {"hats": hat},
             encoder=hatListEncoder,
         )
     else:

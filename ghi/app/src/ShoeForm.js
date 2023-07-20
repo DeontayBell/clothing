@@ -42,7 +42,11 @@ function ShoeForm() {
     const handleBinChange = (event) => {
         const value = event.target.value;
         setBin(value);
-    }
+      }
+
+      useEffect(() => {
+          fetchData();
+        }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -76,9 +80,6 @@ function ShoeForm() {
 
 
 
-    useEffect(() => {
-        fetchData();
-      }, []);
     return (
         <div className="row">
           <div className="offset-3 col-6">
