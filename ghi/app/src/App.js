@@ -2,16 +2,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
 import ShoeForm from './ShoeForm';
+import ShoeList from './ShoeList';
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
       <div className="container">
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<MainPage />} />
-        </Routes> */}
-        <ShoeForm />
+          <Route path="shoes" element={<ShoeList />}/>
+          <Route path="newshoe" element={<ShoeForm />}/>
+        </Routes>
       </div>
     </BrowserRouter>
   );

@@ -87,26 +87,26 @@ function ShoeForm() {
               <form onSubmit={handleSubmit} id="create-shoe-form">
                 <div className="form-floating mb-3">
                 <input onChange={handleManufacturerChange} placeholder="Manufacturer" required
-                  type="text" name="manufacturer" id="manufacturer"
+                  type="text" name="manufacturer" id="manufacturer" value={manufacturer}
                   className="form-control" />
                   <label htmlFor="manufacturer">Manufacturer</label>
                 </div>
                 <div className="form-floating mb-3">
-                <input onChange={handleModelNameChange} placeholder="Model Name"
+                <input onChange={handleModelNameChange} placeholder="Model Name" value={modelName}
                   required type="text" name="model_name" id="model_name"
                   className="form-control" />
                   <label htmlFor="model_name">Model Name</label>
                 </div>
                 <div className="form-floating mb-3">
-                  <input onChange={handleColorChange} placeholder="Color" required type="text" name="color" id="color" className="form-control" />
+                  <input onChange={handleColorChange} placeholder="Color" required type="text" name="color" id="color" value={color} className="form-control" />
                   <label htmlFor="color">Color</label>
                 </div>
                 <div className="form-floating mb-3">
-                  <input onChange={handlePictureUrlChange} placeholder="Image URL" required type="url" name="picture_url" id="picture_url" className="form-control" />
+                  <input onChange={handlePictureUrlChange} placeholder="Image URL" required type="url" value={pictureUrl} name="picture_url" id="picture_url" className="form-control" />
                   <label htmlFor="picture_url">Picture Url</label>
                 </div>
                 <div className="mb-3">
-                    <select onChange={handleBinChange} required name="bin" id="bin" className="form-select">
+                    <select onChange={handleBinChange} required name="bin" id="bin" value={bin} className="form-select">
                     <option value="">Choose a bin</option>
                     {bins.map(bin => {
                       return (
